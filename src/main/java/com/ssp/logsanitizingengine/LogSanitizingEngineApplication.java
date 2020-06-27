@@ -1,4 +1,4 @@
-package com.satyapavan.logsanitizingengine;
+package com.ssp.logsanitizingengine;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
