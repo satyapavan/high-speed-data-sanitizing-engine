@@ -6,3 +6,4 @@ To enable a log sanitizing system that replaces sensitive data with a masked inf
 ## Good Reads
 - https://lwn.net/Articles/449460/
 - https://en.wikipedia.org/wiki/Boyer%E2%80%93Moore_string-search_algorithm
+- https://docs.spring.io/spring-kafka/reference/html/#even-quicker-with-spring-boot
