@@ -28,7 +28,7 @@ public class LogSanitizingEngineApplication implements CommandLineRunner {
 		 *  http://zetcode.com/java/inputstream/
 		 */
 			
-		String fileName = "src/resources/generated.log";
+		String fileName = "src/resources/generated.logx";
 
 		StopWatch sw = new org.springframework.util.StopWatch();
 		sw.start("Method-1"); // Start a named task
