@@ -6,7 +6,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.util.StopWatch;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileInputStream;
+import java.io.FileWriter;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
@@ -16,6 +18,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 @SpringBootApplication
 public class LogSanitizingEngineApplication implements CommandLineRunner {
 
+	final String RPT_FILE = "src/resources/report_" + ProcessHandle.current().pid() + ".log";
 	final String DATA_FILE = "src/resources/generated.logx";
 	final int NO_OF_ITERATIONS = 3;
 
@@ -87,6 +90,10 @@ public class LogSanitizingEngineApplication implements CommandLineRunner {
 
 		System.out.println("Table describing all tasks performed :\n"+sw.prettyPrint());
 		System.out.println("Total time in milliseconds for all tasks :"+sw.getTotalTimeMillis());
-		System.out.println(sbReport);
+		System.out.println("Report available at: " + RPT_FILE);
+		
+		BufferedWriter objBW = new BufferedWriter(new FileWriter(RPT_FILE));
+		objBW.write(sbReport.toString());
+		objBW.close();
 	}
 }
